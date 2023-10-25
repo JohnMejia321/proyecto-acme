@@ -1,0 +1,30 @@
+CREATE TABLE `acme`.`vehiculos` (
+  `placa` VARCHAR(10) NOT NULL,
+  `color` VARCHAR(45) NULL,
+  `marca` VARCHAR(45) NULL,
+  `tipo_de_vehiculo` ENUM("particular", "publico") NULL,
+  `conductorID` INT NOT NULL,
+  `propietarioID` INT NOT NULL,
+  PRIMARY KEY (`placa`),
+  foreign key (conductorID) references conductores(numero_cedula),
+  foreign key (propietarioID) references dueños(numero_cedula));
+
+
+CREATE TABLE `acme`.`conductores` (
+  `numero_cedula` INT NOT NULL,
+  `primer_nombre` VARCHAR(45) NULL,
+  `segundo_nombre` VARCHAR(45) NULL,
+  `apellidos` VARCHAR(45) NULL,
+  `direccion` VARCHAR(45) NULL,
+  `telefono` VARCHAR(45) NULL,
+  `ciudad` VARCHAR(45) NULL,
+  PRIMARY KEY (`numero_cedula`));
+
+CREATE TABLE `acme`.`dueños` (
+  `numero_cedula` INT NOT NULL,
+  `primer_nombre` VARCHAR(45) NULL,
+  `segundo_nombre` VARCHAR(45) NULL,
+  `apellidos` VARCHAR(45) NULL,
+  `direccion` VARCHAR(45) NULL,
+  `telefono` VARCHAR(45) NULL,
+  PRIMARY KEY (`numero_cedula`));
