@@ -15,13 +15,14 @@ class DueñoController extends Controller
     public function agregar(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'numero_cedula' => 'required|integer|unique:dueños,numero_cedula',
-            'primer_nombre' => 'max:45',
-            'segundo_nombre' => 'max:45',
-            'apellidos' => 'max:45',
-            'direccion' => 'max:45',
-            'telefono' => 'max:45',
-            'ciudad' => 'max:45',
+            'numero_cedula' => 'required|integer|unique:dueños',
+            'primer_nombre' => 'required|string',
+            'segundo_nombre' => 'string|nullable',
+            'apellidos' => 'required|string',
+            'direccion' => 'string|nullable',
+            'telefono' => 'string|nullable',
+
+
         ]);
 
         if ($validator->fails()) {
@@ -35,7 +36,6 @@ class DueñoController extends Controller
         $dueño->apellidos = $request->input('apellidos');
         $dueño->direccion = $request->input('direccion');
         $dueño->telefono = $request->input('telefono');
-        $dueño->ciudad = $request->input('ciudad');
         $dueño->save();
 
         return response()->json(['message' => 'Dueño creado con éxito'], Response::HTTP_CREATED);
