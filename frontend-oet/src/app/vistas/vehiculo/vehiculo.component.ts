@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VehiculosService } from 'src/app/servicios/vehiculos.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class VehiculoComponent implements OnInit {
 
   vehiculos: any[] = [];
 
-  constructor(private service: VehiculosService) { }
+  constructor(private service: VehiculosService,private router: Router) { }
 
   ngOnInit() {
     this.cargarVehiculos();
@@ -30,7 +31,7 @@ export class VehiculoComponent implements OnInit {
   }
 
   agregarVehiculo() {
-    // Redirigir a la página de creación de vehículo o mostrar un formulario de creación en un modal, por ejemplo
+    this.router.navigate(['/formulario-vehiculo']);
   }
 
 }

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
-use App\Models\Conductor;
-use App\Models\Dueño;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;

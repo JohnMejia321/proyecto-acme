@@ -1,1 +1,33 @@
-<p>dueno works!</p>
+<div class="container mt-3">
+    <h2>Lista de propietarios de los vehiculos</h2>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Número de Cédula</th>
+          <th scope="col">Primer Nombre</th>
+          <th scope="col">Segundo Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dueno of duenos">
+          <td>{{ dueno.numero_cedula }}</td>
+          <td>{{ dueno.primer_nombre }}</td>
+          <td>{{ dueno.segundo_nombre }}</td>
+          <td>{{ dueno.apellidos }}</td>
+          <td>{{ dueno.direccion }}</td>
+          <td>{{ dueno.telefono }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarDueno(dueno.numero_cedula)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button class="btn btn-primary" (click)="agregarDueno()">Agregar Nuevo propietario</button>
+  </div>
+  

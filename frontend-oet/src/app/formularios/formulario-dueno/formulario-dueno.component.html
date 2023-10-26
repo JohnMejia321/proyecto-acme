@@ -1,1 +1,31 @@
-<p>formulario-dueno works!</p>
+<div class="container">
+    <h2>Formulario de Dueños</h2>
+    <form>
+      <div class="form-group">
+        <label for="numero_cedula">Número de Cédula:</label>
+        <input type="number" id="numero_cedula" name="numero_cedula" class="form-control" [(ngModel)]="numero_cedula" required>
+      </div>
+      <div class="form-group">
+        <label for="primer_nombre">Primer Nombre:</label>
+        <input type="text" id="primer_nombre" name="primer_nombre" class="form-control" [(ngModel)]="primer_nombre">
+      </div>
+      <div class="form-group">
+        <label for="segundo_nombre">Segundo Nombre:</label>
+        <input type="text" id="segundo_nombre" name="segundo_nombre" class="form-control" [(ngModel)]="segundo_nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" class="form-control" [(ngModel)]="apellidos">
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" class="form-control" [(ngModel)]="direccion">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" class="form-control" [(ngModel)]="telefono">
+      </div>
+      <button class="btn btn-primary" (click)="agregarDueno()">Agregar Dueño</button>
+    </form>
+  </div>
+  

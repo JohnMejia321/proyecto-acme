@@ -53,7 +53,7 @@ Route::prefix('vehiculos')->group(function () {
 
 
 // Grupo de rutas para el controlador de Dueño
-Route::prefix('dueños')->group(function () {
+Route::prefix('duenos')->group(function () {
     Route::post('', [DueñoController::class, 'agregar']); // Agregar un dueño
     Route::get('', [DueñoController::class, 'listar']); // Listar todos los dueños
     Route::get('/{id}', [DueñoController::class, 'verPorId']); // Ver un dueño por su ID

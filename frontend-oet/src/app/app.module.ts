@@ -10,6 +10,8 @@ import { DuenoComponent } from './vistas/dueno/dueno.component';
 import { VehiculoComponent } from './vistas/vehiculo/vehiculo.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
