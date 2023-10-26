@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { VehiculosService } from 'src/app/servicios/vehiculos.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class FormularioVehiculoComponent {
   propietarioID: string = '';
 
 
-  constructor(private service: VehiculosService) { }
+  constructor(private service: VehiculosService,private router:Router) { }
 
 
   enviarDatos() {
@@ -33,6 +34,8 @@ export class FormularioVehiculoComponent {
     this.service.agregarVehiculo(vehiculo).subscribe(
       (response) => {
         console.log('Vehículo agregado con éxito:', response);
+        this.service.getVehiculos();
+        this.router.navigate(['/informe-vehiculo']); 
       },
       (error) => {
         console.error('Error al agregar el vehículo:', error);
