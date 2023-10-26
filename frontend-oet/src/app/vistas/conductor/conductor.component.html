@@ -1,1 +1,33 @@
-<p>conductor works!</p>
+<div class="container mt-5">
+    <h2>Lista de Conductores</h2>
+    <button class="btn btn-primary" (click)="navegarAFormularioConductor()">Agregar Conductor</button>
+    <table class="table mt-3">
+      <!-- Encabezados de la tabla -->
+      <thead>
+        <tr>
+          <th>Número de Cédula</th>
+          <th>Primer Nombre</th>
+          <th>Segundo Nombre</th>
+          <th>Apellidos</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <!-- Datos de la tabla -->
+      <tbody>
+        <tr *ngFor="let conductor of conductores">
+          <td>{{ conductor.numero_cedula }}</td>
+          <td>{{ conductor.primer_nombre }}</td>
+          <td>{{ conductor.segundo_nombre }}</td>
+          <td>{{ conductor.apellidos }}</td>
+          <td>{{ conductor.direccion }}</td>
+          <td>{{ conductor.telefono }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarConductor(conductor.numero_cedula)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
