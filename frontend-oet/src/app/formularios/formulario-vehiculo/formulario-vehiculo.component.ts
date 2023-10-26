@@ -11,8 +11,8 @@ export class FormularioVehiculoComponent {
   color: string = '';
   marca: string = '';
   tipo: string = '';
-  conductor: string = '';
-  propietario: string = '';
+  conductorID: string = '';
+  propietarioID: string = '';
 
 
   constructor(private service: VehiculosService) { }
@@ -25,8 +25,8 @@ export class FormularioVehiculoComponent {
       color: this.color,
       marca: this.marca,
       tipo_de_vehiculo: this.tipo,
-      conductor: this.conductor,
-      propietario: this.propietario
+      conductorID: this.conductorID,
+      propietarioID: this.propietarioID
     };
   
     // Llamar al método del servicio para agregar el vehículo
