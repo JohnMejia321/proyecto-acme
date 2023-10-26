@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DuenosService } from 'src/app/servicios/duenos.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class DuenoComponent implements OnInit {
 
     duenos: any[] = [];
   
-    constructor(private dueñosService: DuenosService) { }
+    constructor(private dueñosService: DuenosService,private router: Router) { }
   
     ngOnInit(): void {
       this.enlistarDueños();
@@ -28,8 +29,8 @@ export class DuenoComponent implements OnInit {
     }
   
     agregarDueno() {
-      // Aquí puedes implementar la lógica para agregar un nuevo dueño.
-      // Puedes abrir un modal, una página de formulario, etc.
+      this.router.navigate(['/formulario-dueno']);
+
     }
   
     eliminarDueno(numeroCedula: number) {

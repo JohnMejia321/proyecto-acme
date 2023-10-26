@@ -33,11 +33,9 @@ export class FormularioVehiculoComponent {
     this.service.agregarVehiculo(vehiculo).subscribe(
       (response) => {
         console.log('Vehículo agregado con éxito:', response);
-        // Aquí puedes realizar acciones adicionales después de agregar el vehículo, como redireccionar o mostrar un mensaje de éxito.
       },
       (error) => {
         console.error('Error al agregar el vehículo:', error);
-        // Aquí puedes manejar errores, como mostrar un mensaje de error al usuario.
       }
     );
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DuenosService } from 'src/app/servicios/duenos.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class FormularioDuenoComponent implements OnInit {
 
   dueños: any[] = []; // Para almacenar la lista de dueños
 
-  constructor(private service: DuenosService) {}
+  constructor(private service: DuenosService,private router: Router) {}
 
 
   ngOnInit(): void {
@@ -39,6 +40,7 @@ export class FormularioDuenoComponent implements OnInit {
         // Realizar acciones después de agregar el dueño, como limpiar el formulario
         console.log('Dueño agregado con éxito');
         this.enlistarDuenos(); // Vuelve a listar los dueños después de agregar uno nuevo
+        this.router.navigate(['/informe-dueno']); // Redirige a la ruta informe-dueno
       },
       (error) => {
         console.error('Error al agregar el dueño:', error);
