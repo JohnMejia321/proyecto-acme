@@ -1,6 +1,7 @@
 <div class="container mt-5">
     <h2>Lista de Conductores</h2>
-    <button class="btn btn-primary" (click)="navegarAFormularioConductor()">Agregar Conductor</button>
+    <button class="btn btn-primary" [routerLink]="'/'">Volver a pagina principal</button>
+
     <table class="table mt-3">
       <!-- Encabezados de la tabla -->
       <thead>
@@ -29,5 +30,7 @@
         </tr>
       </tbody>
     </table>
+    <button class="btn btn-primary" (click)="navegarAFormularioConductor()">Agregar Conductor</button>
+
   </div>
   
