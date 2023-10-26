@@ -7,6 +7,7 @@ import { DuenoComponent } from './vistas/dueno/dueno.component';
 import { FormularioDuenoComponent } from './formularios/formulario-dueno/formulario-dueno.component';
 import { FormularioConductorComponent } from './formularios/formulario-conductor/formulario-conductor.component';
 import { ConductorComponent } from './vistas/conductor/conductor.component';
+import { InicioComponent } from './vistas/inicio/inicio.component';
 
 
 
@@ -18,9 +19,10 @@ const routes: Routes = [
   { path: 'informe-dueno', component: DuenoComponent },
   { path: 'formulario-conductor', component: FormularioConductorComponent },
   { path: 'informe-conductor', component: ConductorComponent },
+  { path: '', component: InicioComponent },
 
 
- { path: '', redirectTo: '/informe-vehiculo', pathMatch: 'full' },
+
 ];
 
 

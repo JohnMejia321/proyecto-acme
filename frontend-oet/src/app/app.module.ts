@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { InicioComponent } from './vistas/inicio/inicio.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     FormularioDuenoComponent,
     ConductorComponent,
     DuenoComponent,
-    VehiculoComponent
+    VehiculoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
