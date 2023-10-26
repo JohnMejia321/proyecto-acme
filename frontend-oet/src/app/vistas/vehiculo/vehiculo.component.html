@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Listado de Vehículos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>Color</th>
+          <th>Marca</th>
+          <th>Tipo de Vehículo</th>
+          <th>Conductor</th>
+          <th>Propietario</th>
+          <th>Eliminar</th> <!-- Columna de acciones -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.placa }}</td>
+          <td>{{ vehiculo.color }}</td>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.tipo_de_vehiculo }}</td>
+          <td>{{ vehiculo.conductorID }}</td>
+          <td>{{ vehiculo.propietarioID}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarVehiculo(vehiculo.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="agregarVehiculo()">Agregar Nuevo Vehículo</button>
+  </div>
+  
